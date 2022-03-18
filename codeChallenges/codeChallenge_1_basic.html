@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Code Challenge #1 (basic)</title>
+	<style type="text/css">
+		body{
+			font-family: sans-serif;
+      text-align: center;
+		}
+    h1, h2{
+      margin: 0 auto;
+    }
+    h2{
+      font-size: 1.25rem;
+    }
+    p{
+      padding-top: .25rem;
+      margin: 0 auto;
+    }
+    #click-box{
+      position: relative;
+      width: 50px;
+      margin: 25px  auto;
+      font-size: 1rem;
+      padding: 25px;
+      border: solid 1px black;
+      background-color: blue;
+      color: white;
+    }
+    #click-box.red{
+      background-color: red;
+      color: black;
+    }
+	</style>
+</head>
+<body>
+  <h1>Adoni Torres</h1>
+  <div>
+    <h2>Code Challenge #1</h2>
+    <p>Basic</p>
+  </div>
+  <div id="click-box">Click Me!</div>
+
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+  <script>
+		'use strict';
+
+    //HTML elements
+    const box = $('#click-box');
+
+    $(box).click(function(){
+      $(this).toggleClass("red");
+      console.log('clicked');
+    })
+
+	</script>	
+</body>
+</html>

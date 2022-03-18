@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Code Challenge: 1 (advanced)</title>
+	<style type="text/css">
+		body{
+			font-family: sans-serif;
+      text-align: center;
+		}
+    h1, h2{
+      margin: 0 auto;
+    }
+    h2{
+      font-size: 1.25rem;
+    }
+    p:first-of-type{
+      padding-top: .25rem;
+      margin: 0 auto;
+    }
+    p:not(:first-of-type){
+      margin: 0 auto;
+      text-align: left;
+    }
+    #click-box{
+      position: relative;
+      width: 50px;
+      margin: 25px  auto;
+      font-size: 1rem;
+      padding: 25px;
+      border: solid 1px black;
+      color: white;
+    }
+    div div:last-of-type{
+      padding-left: 25px;
+      width: 150px;
+      margin: 0 auto;
+      text-align: left;
+    }
+	</style>
+</head>
+<body>
+  <h1>Adoni Torres</h1>
+  <div>
+    <h2>Code Challenge #1</h2>
+    <p>Advanced</p>
+    <div id="click-box"data-type>Click Me!</div>
+    <div>
+      <p>Color 1: <span class="color1"></span></p>
+      <p>Color 2: <span class="color2"></span></p>
+    </div>
+  </div>
+
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+  <script>
+		'use strict';
+    const box = $('#click-box');
+    let firstColor = genHex();
+    let secondColor = genHex();
+    let textColor1 = $('.color1').text(firstColor);
+    let textColor2 = $('.color2').text(secondColor);
+    let bgColor = true;
+    let theColor;
+
+    $(box).css({'background-color': firstColor});
+    /*
+    Things to do:
+    // 1. create RNG for hex codes
+    // 2. assign random hex code to each variable
+    3. assign function to alternate between the two variables
+    */
+
+    // function to generate a random whole interger
+    // @2param: numbers
+    function getRandInt(min = 1, max = 100){
+      return Math.floor(Math.random() *(max - min +1))+min;
+    } // end getRandInt()
+
+    // generate random hex value:
+    function genHex(){
+      let hexValues = '0123456789ABCDEF';
+      hexValues = hexValues.split(''); // converts the hexValues string to an array and stores it in the same variable
+      let hexColor = '#';
+
+      for(let i = 0; i < 6; i++){
+        let newVal = hexValues[getRandInt(0, 15)];
+        hexColor += newVal;
+      }
+      return hexColor;
+    } // end genHex()
+
+    $(box).on('click', function(){
+      if(box.css({'background-color': firstColor})){
+        box.css({'background-color': secondColor});
+      }else if(box.css({'background-color': secondColor})){
+        box.css({'background-color': firstColor});
+      }
+      // console.log(firstColor);
+      // console.log(secondColor);
+    })
+
+	</script>	
+</body>
+</html>
