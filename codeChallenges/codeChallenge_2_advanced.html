@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Code Challenge #2 (advanced)</title>
+	<style type="text/css">
+		body{
+			font-family: sans-serif;
+      text-align: center;
+      padding: 1rem;
+      background-color: #eee;
+		}
+    .container{
+      position: relative;
+      width: 500px;
+      height: 540px;
+      margin: 0 auto;
+      background-color: white;
+      border: 1px solid #ccc;
+      box-shadow: 2px 2px 12px gainsboro;
+    }
+    h1, h2{
+      margin: 0 auto;
+    }
+    h2{
+      font-size: 1.25rem;
+    }
+    p{
+      padding-top: .25rem;
+      margin: 0 auto;
+    }
+    .box{
+      position: absolute;
+      top: 150px;
+      left: 100px;
+      width: 50px;
+      height: 50px;
+      border: solid 1px black;
+      background-color: dodgerblue;
+    }
+	</style>
+</head>
+<body>
+  <div class="container">
+    <h1>Adoni Torres</h1>
+    <div>
+      <h2>Code Challenge #2</h2>
+      <p>Advanced</p>
+    </div>
+    <div class="box"></div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.transit/0.9.12/jquery.transit.min.js" integrity="sha512-ueXKWOB9liraz677EVGxz6H8nLk3RJjNv8Bfc0WrO9K9NyxROX3D/6bvZ9RYvAcYFxsVU+I0Jt/AMK0Nk8ya5g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>
+    'use strict';
+    
+    const box = $('.box');
+    let color1 = 'crimson';
+    let color2 = 'dodgerblue';
+
+    function theAni(){
+      $(box).transition({'left': '350px', 'background-color': color1}, 800);
+      $(box).transition({'top': '400px'}, 800);
+      $(box).transition({'left': '100px', 'background-color': color2}, 800);
+      $(box).transition({'top': '150px'}, 800);
+    } // end theAni()
+    setInterval(theAni);
+  </script>
+</body>
+</html>

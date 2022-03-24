@@ -93,13 +93,15 @@
     } // end genHex()
 
     $(box).on('click', function(){
-      if(box.css({'background-color': firstColor})){
+      if(bgColor == true){
+        console.log('firstColor');
         box.css({'background-color': secondColor});
-      }else if(box.css({'background-color': secondColor})){
+        bgColor = false;
+      }else{
+        console.log('secondColor');
         box.css({'background-color': firstColor});
+        bgColor = true;
       }
-      // console.log(firstColor);
-      // console.log(secondColor);
     })
 
 	</script>	
