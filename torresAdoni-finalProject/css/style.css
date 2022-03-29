@@ -1,0 +1,366 @@
+/* ===============
+Global Style Start
+================== */
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+/* this keeps padding and border from adding to element width */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+html{
+  font-family: 'Source Sans Pro', sans-serif;
+}
+body{
+  margin: 0 auto;
+  padding: 1rem;
+  background-color: whitesmoke;
+}
+button:hover, 
+.menu:hover{
+  cursor: pointer;
+}
+.container{
+  position: relative;
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  align-content: flex-start;
+  gap: 0;
+  width: 320px;
+  min-height: 800px;
+  margin: 0 auto;
+  background-color: white;
+  border: 1px solid #aaa;
+  box-shadow: 2px 2px 12px #aaa;
+}
+.hidden{
+  visibility: hidden;
+}
+.no-show{
+  display: none;
+}
+.menu{
+  position: absolute;
+  top: 16px;
+  right: 15px;
+  background-color: #333;
+  clip-path: polygon(33% 0%, 66% 0%, 66% 33%, 100% 33%, 100% 66%, 66% 66%, 66% 100%, 33% 100%, 33% 66%, 0% 66%, 0% 33%, 33% 33%);
+  width: 20px;
+  height: 20px;
+}
+.menu-open{
+  position: absolute;
+  top: 16px;
+  right: 15px;
+  background-color: #333;
+  clip-path: polygon(0% 66%, 0% 33%, 100% 33%, 100% 66%);
+  width: 20px;
+  height: 20px;
+}
+/* =============
+Global Style End
+================ */
+/* ===============
+Header Style Start
+================== */
+header{
+  max-height: 3.5rem;
+}
+h1{
+  text-align: center;
+  font-size: 1.7rem;
+  line-height: 3.5rem;
+  background-color: powderblue;
+  border-bottom: 1px solid gray;
+}
+/* =============
+Header Style End
+================ */
+/* =============
+Main Style Start
+================ */
+main{
+  position: absolute;
+  top: 3.5rem;
+  width: 100%;
+}
+button:not(.button){
+  width: 100%;
+  text-align: left;
+  font-size: 1.5rem;
+  line-height: 3rem;
+}
+.buttons{
+  text-align: center;
+}
+.button{
+  padding: 1rem;
+  min-width: 33%;
+  margin: .5rem .5rem;
+  background-color: #cacae625;
+  border: 1px solid #aaa;
+  border-radius: 10px;
+}
+.race-description, 
+.roll-method-description{
+  position: relative;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  color: #333;
+  padding: 1rem;
+  /* display: none; */
+}
+.selected{
+  text-indent: 0;
+  display: block;
+}
+[class$="-race-description"]{
+  position: absolute;
+  top: 4.8rem;
+  /* left: -999rem; */
+}
+/* Drop down menus */
+.race-menu-container, 
+.roll-method-container{
+  position: relative;
+}
+.race-menu-container{
+  z-index: 1;
+}
+.race-menu-container p, 
+.roll-method-container p{
+  font-size: 1.5rem;
+  line-height: 2rem;
+  color: #333;
+  padding: 1rem 1.5rem;
+}
+.race-menu, 
+.roll-method-menu{
+  line-height: 2.25rem;
+  width: 100%;
+  text-indent: -9999rem;
+  display: none;
+}
+.race-menu-container button:nth-of-type(1), 
+.roll-method-container button:nth-of-type(1){
+  padding-left: 1rem;
+  background-color: aliceblue;
+  border: 1px solid #ccc;
+}
+.race-menu li, 
+.roll-method-menu li{
+  padding-left: 2rem;
+  background-color: white;
+  border: 1px solid #ccc;
+}
+.active{
+  text-indent: 0;
+  display: block;
+  z-index: 1;
+  box-shadow: 2px 2px 12px #aaa;
+}
+.race-menu li:hover, 
+.active li:hover, 
+.roll-method-menu li:hover{
+  background-color: #cacae6;
+  font-weight: bold;
+}
+.roll-method-selected{
+  text-align: center;
+  font-size: 1.75rem;
+  line-height: 3rem;
+}
+.race-selected{
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  line-height: 1.75rem;
+  padding-top: 1rem;
+}
+.race-bonus{
+  text-align: center;
+  font-style: italic;
+  padding-bottom: 1rem;
+}
+.rolls{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  padding: 1rem;
+}
+.rolls.no-show{
+  display: none;
+}
+.rolls div[class*='roll-0']{
+  text-align: center;
+}
+.rolls div[class*='roll-0'] div{
+  background-color: #eee;
+  font-size: 1.75rem;
+  width: 3.5rem;
+  line-height: 3.5rem;
+  margin: 0 auto;
+  border: 1px solid #aaa;
+  border-radius: 50%;
+}
+.rolls div[class*='roll-0'] p{
+  padding: .25rem 0 .5rem;
+}
+.ability-score-container{
+  padding: 1rem;
+}
+.ability-heading-container.ability-container{
+  font-size: 1.5rem;
+  line-height: 2rem;
+  justify-content: space-between;
+}
+.ability-name-heading{
+  padding-left: .75rem;
+}
+.ability-container{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  font-size: 1.75rem;
+  line-height: 3.5rem;
+  padding: .35rem 0;
+}
+.ability-name{
+  width: 4rem;
+  text-align: center;
+}
+.score-container{
+  display: flex;
+}
+.decrease, 
+.increase{
+  padding: 0 .5rem;
+  background-color: #eee;
+  border: 1px solid #aaa;
+}
+.decrease{
+  border-radius: 8px 0 0 8px;
+}
+.increase{
+  border-radius: 0 8px 8px 0;
+}
+.ability-score{
+  background-color: #eee;
+  text-align: center;
+  font-size: 1.75rem;
+  width: 3.5rem;
+  border: 1px solid #aaa;
+}
+.decrease.hidden + .ability-score, 
+.increase.hidden + .ability-score{
+  border-radius: 12px;
+}
+.ability-modifier{
+  width: 4rem;
+  height: 3rem;
+  line-height: 2.75rem;
+  text-align: center;
+}
+.ability-modifier.final{
+  background-color: #eee;
+  border: 1px solid #aaa;
+  border-radius: 50%;
+}
+/* ===========
+Main Style End
+============== */
+/* ===============
+Footer Style Start
+================== */
+footer{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 1rem 0;
+  text-align: center;
+}
+footer>p{
+  font-size: .8625rem;
+  font-style: italic;
+}
+/* =============
+Footer Style End
+================ */
+
+/* ==========
+Media Queries
+============= */
+
+/* Tablet */
+@media only screen and (min-width: 580px) {
+  /* ===============
+  Global Style Start
+  ================== */
+  
+
+  /* =============
+  Global Style End
+  ================ */
+  /* ===============
+  Header Style Start
+  ================== */
+  
+
+  /* =============
+  Header Style End
+  ================ */
+  /* =============
+  Main Style Start
+  ================ */
+  
+
+  /* ===========
+  Main Style End
+  ============== */
+  /* ===============
+  Footer Style Start
+  ================== */
+  
+
+  /* =============
+  Footer Style End
+  ================ */
+}
+
+/* Desktop */
+@media only screen and (min-width: 850px) {
+  /* ===============
+  Global Style Start
+  ================== */
+  
+
+  /* =============
+  Global Style End
+  ================ */
+  /* ===============
+  Header Style Start
+  ================== */
+  
+
+  /* =============
+  Header Style End
+  ================ */
+  /* =============
+  Main Style Start
+  ================ */
+  
+
+  /* ===========
+  Main Style End
+  ============== */
+  /* ===============
+  Footer Style Start
+  ================== */
+  
+
+  /* =============
+  Footer Style End
+  ================ */
+}
+/* ==
+Fonts
+===== */
+/* font-family: 'Source Sans Pro', sans-serif; */

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Character Stat Generator</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="container">
+  <header>
+    <h1>Character Stat Generator</h1>
+  </header>
+  <main>
+    <div class="race-menu-container">
+      <button class="race-menu-button">Select Race:</button>
+      <div class="menu"></div>
+      <ul class="race-menu">
+        <li class="hDwarf">Hill Dwarf</li>
+        <li class="mDwarf">Mountain Dwarf</li>
+        <li class="hElf">High Elf</li>
+        <li class="wElf">Wood Elf</li>
+        <li class="dElf">Dark Elf (Drow)</li>
+        <li class="lHalfling">Lightfoot Halfling</li>
+        <li class="sHalfling">Stout Halfling</li>
+        <li class="human">Human</li>
+        <li class="dragonborn">Dragonborn</li>
+        <li class="fGnome">Forest Gnome</li>
+        <li class="rGnome">Rock Gnome</li>
+        <li class="halfElf">Half-Elf</li>
+        <li class="halfOrc">Half-Orc</li>
+        <li class="tiefling">Tiefling</li>
+      </ul>
+      <!-- <p>Select your character's race to start the Character Stat Generator.</p> -->
+      <div class="race-descriptions no-show"></div>
+      <div class="buttons">
+        <button class="confirm button no-show">Confirm</button>
+      </div>
+    </div>
+    <div class="roll-method-container no-show">
+      <button>Select Roll Method:</button>
+      <div class="menu menu-open"></div>
+      <ul class="roll-method-menu">
+        <li class="random-roll-method roll-method">Random</li>
+        <li class="standard-array-roll-method roll-method">Standard Array</li>
+        <li class="manual-roll-method roll-method">Manual</li>
+        <li class="point-buy-roll-method roll-method">Point Buy</li>
+      </ul>
+      <p>Select a Roll Method to generate the Ability Scores for your character.</p>
+      <div class="roll-method-description">Roll Method description goes here</div>
+      <div class="buttons no-show">
+        <button class="continue button">Continue</button>
+      </div>
+    </div>
+    <div class="selections">
+      <div class="roll-method-selected no-show">Roll Method here</div>
+      <div class="buttons no-show">
+        <button class="roll button">Roll</button>
+      </div>
+      <div class="race-selected no-show">Race Name here</div>
+      <div class="race-description no-show">Race Description here.</div>
+      <div class="race-bonus no-show">(Race bonus(s) here)</div>
+    </div>
+    <div class="rolls no-show">
+      <div class="roll-01">
+        <div>&nbsp;</div>
+        <p>1st Roll</p>
+      </div>
+      <div class="roll-02">
+        <div>&nbsp;</div>
+        <p>2nd Roll</p>
+      </div>
+      <div class="roll-03">
+        <div>&nbsp;</div>
+        <p>3rd Roll</p>
+      </div>
+      <div class="roll-04">
+        <div>&nbsp;</div>
+        <p>4th Roll</p>
+      </div>
+      <div class="roll-05">
+        <div>&nbsp;</div>
+        <p>5th Roll</p>
+      </div>
+      <div class="roll-06">
+        <div>&nbsp;</div>
+        <p>6th Roll</p>
+      </div>
+    </div>
+    <div class="buttons no-show">
+      <button class="accept button">Accept</button>
+      <button class="re-roll button">Re-roll</button>
+      <button class="start-over button">Start Over</button>
+      <button class="next button no-show">Next</button>
+    </div>
+    <div class="ability-score-container no-show">
+      <div class="ability-heading-container ability-container">
+        <p class="ability-name-heading">Ability</p>
+        <div class="ability-score-heading">Score</div>
+        <div class="ability-modifier-heading">Modifier</div>
+      </div>
+      <div class="str-container ability-container">
+        <p class="str-name ability-name">STR</p>
+        <div class="str-score-container score-container">
+          <div class="decrease hidden">-</div>
+          <div class="str-score ability-score">17</div>
+          <div class="increase hidden">+</div>
+        </div>
+        <div class="str-modifier ability-modifier hidden">+3</div>
+      </div>
+      <div class="dex-container ability-container">
+        <p class="dex-name ability-name">DEX</p>
+        <div class="dex-score-container score-container">
+          <div class="decrease hidden">-</div>
+          <div class="dex-score ability-score">12</div>
+          <div class="increase hidden">+</div>
+        </div>
+        <div class="dex-modifier ability-modifier hidden">+1</div>
+      </div>
+      <div class="con-container ability-container">
+        <p class="con-name ability-name">CON</p>
+        <div class="con-score-container score-container">
+          <div class="decrease hidden">-</div>
+          <div class="con-score ability-score">8</div>
+          <div class="increase hidden">+</div>
+        </div>
+        <div class="con-modifier ability-modifier hidden">-1</div>
+      </div>
+      <div class="int-container ability-container">
+        <p class="int-name ability-name">INT</p>
+        <div class="int-score-container score-container">
+          <div class="decrease hidden">-</div>
+          <div class="int-score ability-score">13</div>
+          <div class="increase hidden">+</div>
+        </div>
+        <div class="int-modifier ability-modifier hidden">+1</div>
+      </div>
+      <div class="wis-container ability-container">
+        <p class="wis-name ability-name">WIS</p>
+        <div class="wis-score-container score-container">
+          <div class="decrease hidden">-</div>
+          <div class="wis-score ability-score">14</div>
+          <div class="increase hidden">+</div>
+        </div>
+        <div class="wis-modifier ability-modifier hidden">+2</div>
+      </div>
+      <div class="cha-container ability-container">
+        <p class="cha-name ability-name">CHA</p>
+        <div class="cha-score-container score-container">
+          <div class="decrease hidden">-</div>
+          <div class="cha-score ability-score">10</div>
+          <div class="increase hidden">+</div>
+        </div>
+        <div class="cha-modifier ability-modifier hidden">+0</div>
+      </div>
+    </div>
+    <div class="buttons no-show">
+      <button class="finish button no-show">Finish</button>
+      <button class="save button no-show">Save (pdf)</button>
+      <button class="start-over button no-show">Start Over</button>
+    </div>
+  </main>
+  <footer>
+    <p>&copy;Adoni Torres 2022. All rights reserved.</p>
+  </footer>
+</div>
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+<script src="scripts/main-script.js"></script>
+</body>
+</html>
