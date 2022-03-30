@@ -99,6 +99,10 @@ button:not(.button){
   border: 1px solid #aaa;
   border-radius: 10px;
 }
+.button:hover{
+  background-color: #cacae6;
+  font-weight: bold;
+}
 .race-description, 
 .roll-method-description{
   position: relative;
@@ -106,7 +110,6 @@ button:not(.button){
   line-height: 2rem;
   color: #333;
   padding: 1rem;
-  /* display: none; */
 }
 .selected{
   text-indent: 0;
@@ -115,7 +118,6 @@ button:not(.button){
 [class$="-race-description"]{
   position: absolute;
   top: 4.8rem;
-  /* left: -999rem; */
 }
 /* Drop down menus */
 .race-menu-container, 
@@ -139,8 +141,8 @@ button:not(.button){
   text-indent: -9999rem;
   display: none;
 }
-.race-menu-container button:nth-of-type(1), 
-.roll-method-container button:nth-of-type(1){
+.race-menu-container>button:nth-of-type(1), 
+.roll-method-container>button:nth-of-type(1){
   padding-left: 1rem;
   background-color: aliceblue;
   border: 1px solid #ccc;
@@ -164,8 +166,9 @@ button:not(.button){
   font-weight: bold;
 }
 .roll-method-selected{
+  background-color: #eee;
   text-align: center;
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   line-height: 3rem;
 }
 .race-selected{
@@ -178,7 +181,7 @@ button:not(.button){
 .race-bonus{
   text-align: center;
   font-style: italic;
-  padding-bottom: 1rem;
+  padding: .5rem 0 1rem;
 }
 .rolls{
   display: grid;
