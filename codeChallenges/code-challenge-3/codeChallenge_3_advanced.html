@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Code Challenge #3 (advanced)</title>
+	<style type="text/css">
+		body{
+			font-family: sans-serif;
+      text-align: center;
+      padding: 1rem;
+      background-color: #eee;
+		}
+    .container{
+      position: relative;
+      width: 500px;
+      height: 400px;
+      margin: 0 auto;
+      background-color: white;
+      border: 1px solid #ccc;
+      box-shadow: 2px 2px 12px gainsboro;
+    }
+    .output{
+      text-align: left;
+      width: 168px;
+      height: 1rem;
+      margin: .5rem auto;
+    }
+    .characters{
+      text-align: left;
+      font-style: italic;
+      width: 168px;
+      margin: .5rem auto;
+    }
+    .characters:nth-of-type(2){
+      color: #999;
+      font-size: .75rem;
+      margin: -.5rem auto 0;
+      text-align: center;
+    }
+	</style>
+</head>
+<body>
+  <div class="container">
+    <h1>Adoni Torres</h1>
+    <div>
+      <h2>Code Challenge #3</h2>
+      <p>Advanced</p>
+    </div>
+    <input id="text-input" type="text">
+    <div class="output"></div>
+    <p class="characters"># of Characters: <span></span></p>
+    <p class="characters">(includes spaces)</p>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script>
+    'use strict';
+    let input = $('#text-input');
+    let output = $('.output');
+    let characters = $('.characters span');
+
+    input.keyup( function(){
+      let text = $(this).val();
+      output.text(text);
+    })
+    input.keyup(counts);
+
+    function counts(){
+      let count = $(this).val().length;
+      characters.text(count);
+    } // end counts()
+  </script>
+</body>
+</html>
