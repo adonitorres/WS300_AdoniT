@@ -12,11 +12,12 @@
   <div class="container">
   <header>
     <h1>Character Stat Generator</h1>
+    <br><br>
   </header>
   <main>
     <div class="race-menu-container">
       <button class="race-menu-button">Select Race:</button>
-      <div class="menu"></div>
+      <div class="race-menu-icon"></div>
       <ul class="race-menu">
         <li class="hDwarf">Hill Dwarf</li>
         <li class="mDwarf">Mountain Dwarf</li>
@@ -34,6 +35,7 @@
         <li class="tiefling">Tiefling</li>
       </ul>
       <p>Select your character's race to start the Character Stat Generator.</p>
+      </table>
       <div class="race-descriptions no-show"></div>
       <div class="race-selected no-show">Race Name here</div>
       <div class="race-description no-show">Race Description here.</div>
@@ -44,7 +46,7 @@
     </div>
     <div class="roll-method-container no-show">
       <button class="roll-method-menu-button">Select Roll Method:</button>
-      <div class="menu menu-open"></div>
+      <div class="roll-method-menu-icon"></div>
       <ul class="roll-method-menu">
         <li class="random-roll-method roll-method">Random</li>
         <li class="standard-array-roll-method roll-method">Standard Array</li>
@@ -59,31 +61,31 @@
       </div>
     </div>
     <div class="buttons">
-      <button class="roll button no-show">Roll</button>
+      <button class="roll-btn button no-show">Roll</button>
     </div>
     <div class="rolls no-show">
-      <div class="roll-01">
-        <div>&nbsp;</div>
+      <div class="roll-01 roll">
+        <div class="roll-div">&nbsp;</div>
         <p>1st Roll</p>
       </div>
-      <div class="roll-02">
-        <div>&nbsp;</div>
+      <div class="roll-02 roll">
+        <div class="roll-div">&nbsp;</div>
         <p>2nd Roll</p>
       </div>
-      <div class="roll-03">
-        <div>&nbsp;</div>
+      <div class="roll-03 roll">
+        <div class="roll-div">&nbsp;</div>
         <p>3rd Roll</p>
       </div>
-      <div class="roll-04">
-        <div>&nbsp;</div>
+      <div class="roll-04 roll">
+        <div class="roll-div">&nbsp;</div>
         <p>4th Roll</p>
       </div>
-      <div class="roll-05">
-        <div>&nbsp;</div>
+      <div class="roll-05 roll">
+        <div class="roll-div">&nbsp;</div>
         <p>5th Roll</p>
       </div>
-      <div class="roll-06">
-        <div>&nbsp;</div>
+      <div class="roll-06 roll">
+        <div class="roll-div">&nbsp;</div>
         <p>6th Roll</p>
       </div>
     </div>
@@ -103,61 +105,61 @@
         <p class="str-name ability-name">STR</p>
         <div class="str-score-container score-container">
           <div class="decrease hidden">-</div>
-          <div class="str-score ability-score">17</div>
+          <div class="str-score ability-score">&nbsp;</div>
           <div class="increase hidden">+</div>
         </div>
-        <div class="str-modifier ability-modifier hidden">+3</div>
+        <div class="str-modifier ability-modifier hidden">&nbsp;</div>
       </div>
       <div class="dex-container ability-container">
         <p class="dex-name ability-name">DEX</p>
         <div class="dex-score-container score-container">
           <div class="decrease hidden">-</div>
-          <div class="dex-score ability-score">12</div>
+          <div class="dex-score ability-score">&nbsp;</div>
           <div class="increase hidden">+</div>
         </div>
-        <div class="dex-modifier ability-modifier hidden">+1</div>
+        <div class="dex-modifier ability-modifier hidden">&nbsp;</div>
       </div>
       <div class="con-container ability-container">
         <p class="con-name ability-name">CON</p>
         <div class="con-score-container score-container">
           <div class="decrease hidden">-</div>
-          <div class="con-score ability-score">8</div>
+          <div class="con-score ability-score">&nbsp;</div>
           <div class="increase hidden">+</div>
         </div>
-        <div class="con-modifier ability-modifier hidden">-1</div>
+        <div class="con-modifier ability-modifier hidden">1</div>
       </div>
       <div class="int-container ability-container">
         <p class="int-name ability-name">INT</p>
         <div class="int-score-container score-container">
           <div class="decrease hidden">-</div>
-          <div class="int-score ability-score">13</div>
+          <div class="int-score ability-score">&nbsp;</div>
           <div class="increase hidden">+</div>
         </div>
-        <div class="int-modifier ability-modifier hidden">+1</div>
+        <div class="int-modifier ability-modifier hidden">&nbsp;</div>
       </div>
       <div class="wis-container ability-container">
         <p class="wis-name ability-name">WIS</p>
         <div class="wis-score-container score-container">
           <div class="decrease hidden">-</div>
-          <div class="wis-score ability-score">14</div>
+          <div class="wis-score ability-score">&nbsp;</div>
           <div class="increase hidden">+</div>
         </div>
-        <div class="wis-modifier ability-modifier hidden">+2</div>
+        <div class="wis-modifier ability-modifier hidden">test</div>
       </div>
       <div class="cha-container ability-container">
         <p class="cha-name ability-name">CHA</p>
         <div class="cha-score-container score-container">
           <div class="decrease hidden">-</div>
-          <div class="cha-score ability-score">10</div>
+          <div class="cha-score ability-score">&nbsp;</div>
           <div class="increase hidden">+</div>
         </div>
-        <div class="cha-modifier ability-modifier hidden">+0</div>
+        <div class="cha-modifier ability-modifier hidden">&nbsp;</div>
       </div>
-    </div>
-    <div class="buttons no-show">
-      <button class="finish button no-show">Finish</button>
-      <button class="save button no-show">Save (pdf)</button>
-      <button class="start-over button no-show">Start Over</button>
+      <div class="buttons no-show">
+        <button class="finish button">Finish</button>
+        <button class="save button no-show">Save (pdf)</button>
+        <button class="start-over button">Start Over</button>
+      </div>
     </div>
   </main>
   <footer>
