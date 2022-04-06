@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Code Challenge #4 (basic)</title>
+	<style type="text/css">
+		body{
+			font-family: sans-serif;
+      text-align: center;
+      padding: 1rem;
+      background-color: #eee;
+		}
+    .container{
+      position: relative;
+      width: 99%;
+      height: 90vh;
+      margin: 0 auto;
+      background-color: white;
+      border: 1px solid #ccc;
+      box-shadow: 2px 2px 12px gainsboro;
+    }
+    .dynamic, 
+    .static{
+      position: relative;
+      text-align: left;
+      background-color: mediumorchid;
+      width: 98%;
+      max-width: 98%;
+      height: 3rem;
+      margin: .5rem 1% 1rem;
+    }
+    .static{
+      width: 25%;
+      background-color: dodgerblue;
+    }
+	</style>
+</head>
+<body>
+  <div class="container">
+    <h1>Adoni Torres</h1>
+    <div>
+      <h2>Code Challenge #4</h2>
+      <p>Basic</p>
+    </div>
+    <div class="dynamic"></div>
+    <div class="static"></div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script>
+    'use strict';
+
+    let stage = $('.container'), // container placeholder
+        stageWidth = (percentage($(window).width(), 98)), // dynamic width of stage
+        dynamicDiv = $('.dynamic'), // div to be resized with mouse movement
+        staticDiv = $('.static'); // div to be resized with mouse click
+
+    stage.on('mousemove', function(){
+      let xCoord = event.pageX;
+      
+      dynamicDiv.width(xCoord - (percentage(stageWidth, 4))); // resizes div with mouse movement in stage container only
+    })
+
+    // change width of blue div to match purple div's width on mouse click
+    stage.on('click', function(){
+      staticDiv.width(dynamicDiv.width());
+    })
+
+    // percentage function
+    function percentage(num, per){
+      return (num/100)*per;
+    } // end percentage()
+    
+  </script>
+</body>
+</html>
