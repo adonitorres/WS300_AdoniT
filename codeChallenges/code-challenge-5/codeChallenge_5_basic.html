@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Code Challenge #5 (basic)</title>
+	<style type="text/css">
+		body{
+			font-family: sans-serif;
+      text-align: center;
+      padding: 1rem;
+      background-color: #eee;
+		}
+    .container{
+      position: relative;
+      width: 500px;
+      height: 400px;
+      margin: 0 auto;
+      background-color: white;
+      border: 1px solid #ccc;
+      box-shadow: 2px 2px 12px gainsboro;
+    }
+    .clock{
+      margin: 5rem auto;
+      padding: 1rem;
+      font-size: 2rem;
+      line-height: 3rem;
+      width: 250px;
+      background-color: gold;
+    }
+    .night{
+      color: lightgray;
+      background-color: darkblue;
+    }
+	</style>
+</head>
+<body>
+  <div class="container">
+    <h1>Adoni Torres</h1>
+    <div>
+      <h2>Code Challenge #5</h2>
+      <p>Basic</p>
+    </div>
+    <div class="clock">00:00:00 AM</div>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script>
+    'use strict';
+
+    let clock = $('.clock');
+    
+    function updateTime(){
+      let time = new Date(),
+          hr = time.getHours(),
+          min = time.getMinutes(),
+          sec = time.getSeconds(),
+          amPM = hr >= 12 ? 'PM' : 'AM';
+
+      if(hr >= 18){
+        clock.addClass('night');
+      }
+
+      hr = hr % 12;
+      hr = hr ? hr : 12;
+      hr = hr.toString().padStart(2, '0');
+      min = min.toString().padStart(2, '0');
+      sec = sec.toString().padStart(2, '0');
+      let timeText = hr + ':' + min + ':' + sec + ' ' + amPM;
+
+      clock.text(`${hr}:${min}:${sec} ${amPM}`);
+
+    } // end updateTime()
+
+    updateTime()
+
+    setInterval( function(){
+        updateTime()
+      }, 1000);
+    
+  </script>
+</body>
+</html>
