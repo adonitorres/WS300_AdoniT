@@ -10,6 +10,7 @@ html{
   font-family: 'Source Sans Pro', sans-serif;
 }
 body{
+  position: relative;
   margin: 0 auto;
   padding: 1rem;
   background-color: whitesmoke;
@@ -195,6 +196,20 @@ button:not(.button){
 .race-bonus span{
   font-weight: bold;
 }
+#dice-gif{
+  position: absolute;
+  pointer-events: none;
+  top: 16.1rem;
+  right: 24.25rem;
+  margin: 0 auto;
+  width: 480px;
+  height: 270px;
+}
+#dice-gif img{
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+}
 .rolls{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -261,7 +276,6 @@ tr:nth-of-type(odd){
 }
 .score-container{
   display: flex;
-  /* width: 100px; */
 }
 .decrease, 
 .increase{
@@ -303,14 +317,12 @@ tr:nth-of-type(odd){
 }
 /* PNG save styling */
 .final{
-  /* margin: 0; */
   padding: 5rem 0;
   height: 800px;
   background: url(../images/parchment-paper-background-rug-scroll-page-text-transparent-png-1581482.png) no-repeat center / contain;
 }
 .final *, 
 .final .container{
-  /* margin: 0; */
   border: transparent;
   background-color: transparent;
   box-shadow: none;
